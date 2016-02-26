@@ -1,0 +1,46 @@
+group 'com.sepoe'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+
+jar {
+    baseName = 'gs-rest-service'
+    version =  '0.1.0'
+}
+repositories {
+    mavenCentral()
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    testCompile 'org.hamcrest:hamcrest-all:[1,)'
+    testCompile 'junit:junit:[4,)'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+    compile("org.springframework.boot:spring-boot-starter-web")
+}
+
+
+
+test {
+    testLogging{
+        exceptionFormat = 'full'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'
+}
