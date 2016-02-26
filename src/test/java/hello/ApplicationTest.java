@@ -1,3 +1,6 @@
+package hello;
+
+import hello.Application;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -9,9 +12,9 @@ import static org.junit.Assert.assertThat;
  * @author L.Hankewitz
  * @since 26/02/16.
  */
-public class AppTest {
+public class ApplicationTest {
 
-  private App app = new App();
+  private Application app = new Application();
 
   @Test
   public void when_callingGreeting_returnHelloWorld() {
